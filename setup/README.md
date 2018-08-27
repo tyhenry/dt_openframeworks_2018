@@ -43,35 +43,39 @@ On Mac, you'll want to install the [Homebrew](http://brew.sh/) package manager f
     
 
 2. **Then install Git**
-	 _In Terminal, type:_ 
-	    
-	    brew install git
+     _In Terminal, type:_ 
+        
+        brew install git
 
 ### Windows:
 
-Download the Git installer from [the Git website](https://git-scm.com/download/win).  This will install Git, as well as __Git Bash__, which you will use as your command line interface to control Git.
+Download the Git installer from [the Git website](https://git-scm.com/download/win).  
+This will install Git, as well as __Git Bash__, which you will use as your command line interface to control Git.
 
 
 ## 4. Clone this Git repository
 
 Open the command line (__Terminal__ on Mac, or __Git Bash__ on Windows), and navigate to your openFrameworks root directory. For instance, type:
 
-	cd ~/Desktop/openFrameworks
-	
+    cd ~/Desktop/openFrameworks
+    
 (or replace `~/Desktop/openFrameworks/` with your openFrameworks folder path).
 
 Now clone this repository:
 
-	git clone https://github.com/tyhenry/dt_openframeworks_2018.git
+    git clone https://github.com/tyhenry/dt_openframeworks_2018.git
 
 You will see that the folder appears next to the `apps/` and `addons/` folders, i.e.
 
-* `addons/`
-* `apps/`
-* **`dt_openframeworks_2018/`**
-* `examples/`
-* `libs/`
-* `scripts/`
+```
+openFrameworks/
+  addons/
+  apps/
+  docs/
+  dt_openframeworks_2018/
+  examples/
+  etc.../
+```
 
 This folder structure allows you to easily build the example applications from the `dt_openframeworks_2018` repo.
 
@@ -81,28 +85,29 @@ This folder structure allows you to easily build the example applications from t
 [GitHub](https://github.com/join) is the most popular website for hosting code.  
 Git + GitHub is the system we'll use to share example code, and how you'll submit homework.
 
-**1. Sign up:**  
+### 1. Sign up:  
   You need to [sign up for a free account at GitHub.com](https://github.com/join) if you don't have an account already.
 
-**2. Create your homework repo:**   
+### 2. Create your homework repo:   
   Now create a repository for your homework on GitHub.  
   To create a new repo, click the **[+]** symbol in the upper right of the webpage.  
-    
-  **IMPORTANT: NAME YOUR REPO AS FOLLOWS:**  
-  **`[Your New School ID]_dtOF_2018`** (example: **henrt555_dtOF_2018**)
-    
-  ![create repo screenshot](github_create_repo.png)
-       
 
-**3. Clone your new repo to your computer:** 
+  **IMPORTANT:**
+  Name your homework repo as follows:
+  **`[Your New School ID]_dtOF_2018`** (example: **`henrt555_dtOF_2018`**)
+    
+  ![(create repo screenshot)](github_create_repo.png)
+       
+### 3. Clone your new repo to your computer: 
 
   - First, copy the repo address given to you by GitHub  
     (e.g. `https://github.com/tyhenry/henrt555_dtOF_2018.git`) 
 
-  ![clone repo screenshot](github_clone_link.png)
+  ![(clone repo screenshot)](github_clone_link.png)
 
-  - Then, in **Terminal** (or **Git Bash** on Windows), navigate to your `openFrameworks/apps/` folder.  
-    Type `git clone ` and paste the address, e.g.:   
+  - Then, in **Terminal** (or **Git Bash** on Windows):  
+    Navigate to your `openFrameworks/apps/` folder.  
+    Then type `git clone ` and paste the address, e.g.:   
     
         cd ~/Desktop/openFrameworks/apps/ 
         git clone https://github.com/tyhenry/henrt555_dtOF_2017.git
@@ -116,23 +121,24 @@ Git + GitHub is the system we'll use to share example code, and how you'll submi
 
   For example:
 
-```
-openFrameworks/
-	addons/
-	app/
-		henrt555_dtOF_2018/
-			w01_h01_helloWorld/
-			w01_h02_myFancyApp/
-			w02_h01_goToTen/ 
-			w03_h01_nandNor/ 
-			etc…/
-	libs/
-	examples/
-	dt_openframeworks_2017/
-```
+  ```
+  openFrameworks/
+    addons/
+    apps/
+      henrt555_dtOF_2018/
+        w01_h01_helloWorld/
+        w01_h02_myFancyApp/
+        w02_h01_goToTen/ 
+        w03_h01_nandNor/ 
+        etc…/
+    docs/
+    dt_openframeworks_2018/
+    examples/
+    etc.../
+  ```
 
 
-**4. Add .gitignore file**
+### 4. Add .gitignore file:
 
   To keep your homework repo nice and neat, you need to add a **`.gitignore`** file to your folder.  
   This file tells Git what file types you __don't__ want to track and send to GitHub. 
