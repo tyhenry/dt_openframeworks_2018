@@ -3,7 +3,7 @@
 There are 5 main steps:
 
  1. [Download openFrameworks](#1-download-openframeworks)
- 2. [Install your IDE (Xcode or Visual Studio)](#2-setup-your-ide)
+ 2. [Install your IDE (Xcode or Visual Studio)](#2-install-your-ide)
  3. [Install Git](#3-install-git)
  4. [Clone this Git repo](#4-clone-this-git-repository)
  5. [Create your Git account and your homework repo](#5-create-a-github-account-and-make-a-new-repository-for-your-homework)
