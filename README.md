@@ -79,7 +79,7 @@ By the successful completion of this course, students will be able to:
 
 
 ## Materials and Supplies
-This course will be based on [openFrameworks](http://openframeworks.cc) C++ toolkit and will use [GitHub.com](https://github.com/) as the online platform to share code, documentation, and homework. (Please read and follow the [setup](Setup.md) document BEFORE coming to class.)  
+This course will be based on [openFrameworks](http://openframeworks.cc) C++ toolkit and will use [GitHub.com](https://github.com/) as the online platform to share code, documentation, and homework. (Please read and follow the [setup](setup) document BEFORE coming to class.)  
 
 You may find additional help and inspiration in the examples contained in the following repositories:
 

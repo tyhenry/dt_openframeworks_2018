@@ -1,5 +1,13 @@
 # Setup
 
+There are 5 main steps:
+
+ 1. [Download openFrameworks](#1-download-openframeworks)
+ 2. [Install your IDE (Xcode or Visual Studio)](#2-setup-your-ide)
+ 3. [Install Git](#3-install-git)
+ 4. [Clone this Git repo](#4-clone-this-git-repository)
+ 5. [Create your Git account and your homework repo](#5-create-a-github-account-and-make-a-new-repository-for-your-homework)
+
 
 ## 1. Download openFrameworks
 
@@ -10,7 +18,7 @@ Unzip this file. You'll see a folder like `of_v0.10.0_osx_release`, which contai
 I recommend placing OF on your Desktop so it's easily accessible, i.e. `~/Desktop/of_v0.10.0_osx_release`.  You can also rename the folder to something nicer like `~/Desktop/openFrameworks` if you want.
 
 
-## 2. Setup your IDE
+## 2. Install your IDE
 
 Your IDE - "integrated development environment" - is a glorified text editor, with a built-in compiler to run your apps.  It's where you will write your code and build your openFrameworks applications.
 
