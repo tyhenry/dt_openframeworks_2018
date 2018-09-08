@@ -1,5 +1,18 @@
 # Week 2
 
+## How to get the Week02 folder onto your computer
+
+In Terminal (or Git Bash on Windows), navigate to your `dt_openframeworks_2018` folder, i.e.  
+
+`cd /Users/tyler/of_v0.10.0_osx_release/dt_openframeworks_2018`  
+
+Then type:  
+
+`git pull`  
+
+The `dt_openframeworks_2018` directory will update automatically and download the `week02` folder to your computer.  
+
+To run the example apps, open Project Generator, click `import` button and select the app folder, e.g. `week02/bouncing_square`, then click `update` and then `open in IDE`.
 
 
 ## Apps
