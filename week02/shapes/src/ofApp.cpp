@@ -18,12 +18,12 @@ void ofApp::draw(){
     
     // circle
     
-    ofSetColor(0,255,0);        // green
+    ofSetColor(255,0,0);        // set drawing color red
     ofDrawCircle(200,100, 50);      // x,y: 200,100     circle radius: 50
     
     // rectangle
     
-    ofSetColor(255,0,0);        // set drawing color red
+    ofSetColor(0,255,0);        // green
     ofDrawRectangle(200,300, 200,400);      // x,y: 100,300    width,height: 200,400
     
     // triangle
