@@ -14,13 +14,13 @@ git status      # optional, but helpful -
                 # displays a list of recently modified files
 
 # step 1
-git add -A      # add ("stage") _all_ files. -A means "all".  
-                # you could instead specify a list of files.  
+git add -A      # add ("stage") all files. -A means "all".  
+                # you could instead specify a list of files  
 
 # step 2
 git commit -m "your commit message"     # "commit" confirms the changes / Git takes a snapshot
                                         # "-m" adds a log message, e.g. "homework week 3"
-                                        
+
 # step 3
 git push origin master                  # "push" the new commit to the "origin" (GitHub)
                                         # "master" is the default version ("branch") of your repo
