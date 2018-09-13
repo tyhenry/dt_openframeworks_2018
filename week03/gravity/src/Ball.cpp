@@ -18,41 +18,40 @@ void Ball::setup() {
 	pos.x = ofGetWidth() * 0.5;
 	pos.y = ofGetHeight() * 0.5;
 
-	// random x and y speeds/directions between -10 and 10
-	vel.x = ofRandom(-10,10);
-	vel.y = ofRandom(-10,10);
+	// no velocity to start
+    vel = glm::vec2(0,0);
     
 }
 
 // update position, etc.
-void Ball::update(ofVec2f force) {
+void Ball::update(glm::vec2 force) {
     
     acc = force;
     
-    dir+=acc;
-    pos+=dir;
+    vel+=acc;
+    pos+=vel;
 
 	// check for bounces at edges of window:
 
 	// check left
 	if (pos.x <= radius) {
-		pos.x = radius;			// set the position back to the edge of window
-		dir.x = -.7 * dir.x;		// and reverse direction
+		pos.x = radius;		// set the position back to the edge of window
+		vel.x *= -1;		// and reverse velection
 	}
 	// check right
 	else if (pos.x >= ofGetWidth() - radius) {
 		pos.x = ofGetWidth() - radius;			// similar to above
-		dir.x = -.7 * dir.x; // slow down
+		vel.x *= -1; // slow down
 	}
 
 	// check top and bottom
 	if (pos.y <= radius) {
 		pos.y = radius;
-		dir.y = -.7 * dir.y;
+		vel.y *= -1;
 	}
 	else if (pos.y >= ofGetHeight() - radius) {
 		pos.y = ofGetHeight() - radius;
-		dir.y = -.7 * dir.y;
+		vel.y *= -1;
 	}
 }
 
@@ -62,4 +61,5 @@ void Ball::draw() {
 
 	ofSetColor(color);				// set the GLOBAL color
 	ofDrawCircle(pos, radius);		// and draw
+    ofSetColor(255);                // restore global white draw color
 }

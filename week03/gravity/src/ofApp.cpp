@@ -7,28 +7,29 @@ void ofApp::setup(){
     
     gravity = glm::vec2(0,0); 	// start with no gravity
 	
+    ball.setup();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     
     // mouse position alters gravity / wind
-    gravity.x = ofMap(ofGetMouseX(), 0, ofGetWidth(), -1, 1);
-    gravity.y = ofMap(ofGetMouseY(), 0, ofGetHeight(), -1, 1);
+    gravity.x = ofMap(ofGetMouseX(), 0, ofGetWidth(), -.3, .3);
+    gravity.y = ofMap(ofGetMouseY(), 0, ofGetHeight(), -.3, .3);
 
 
-	ball1.update(gravity); // apply force to balls
-	ball2.update(gravity);
-	ball3.update(gravity);
+    ball.update(gravity);
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-	ball1.draw();
-	ball2.draw();
-	ball3.draw();
+    ball.draw();
+    
+    // draw some info on screen
+    string gravityInfo = "'gravity' force (x,y): " + ofToString(gravity, 2);
+    ofDrawBitmapString(gravityInfo, 20, 20);
 
 }
 

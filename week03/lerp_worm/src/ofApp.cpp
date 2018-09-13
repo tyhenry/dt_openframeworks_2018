@@ -9,28 +9,19 @@ void ofApp::setup(){
     
     // create 10 balls
     
-    int nBalls = 10;
-    
-    for (int i=0; i<nBalls; i++){
+    for (int i=0; i<10; i++){
         
-        Ball ball;
+        balls[i].radius = ofMap(i, 0,9, 50, 10);
+        // radius based on ball array index (start with largest)
         
-        ball.radius = ofMap(i, nBalls,0, 10, 50);
-        // radius based on ball #, starting with biggest
-        
-        ball.pct    = ofMap(ball.radius, 10,50, 0.1,.03);
+        balls[i].lerp   = ofMap(balls[i].radius, 10,50, 0.1,.03);
         // the larger the ball, the slower the interpolation speed
         
+        // set color
+        balls[i].color.r = ofMap(balls[i].radius, 50,10, 0,255);    // smaller --> redder
+        balls[i].color.b = ofMap(balls[i].radius, 10,50, 0,255);    // larger --> bluer
+        balls[i].color.g = 0;       // no green
 
-        ball.color.r = ofMap(ball.radius, 50,10, 0,255);
-        ball.color.b = ofMap(ball.radius, 10,50, 0,255);
-        // smaller -> red, larger -> blue
-        ball.color.g = 0;
-        // no green
-
-        
-        // store ball in our vector
-        balls.push_back(ball);
     }
 
 }
@@ -38,18 +29,16 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     
-    ofVec2f mouse;
+    glm::vec2 mouse;
     mouse.x = ofGetMouseX();
     mouse.y = ofGetMouseY();
     
-    for (int i=0; i<balls.size(); i++){
+    for (int i=0; i<10; i++){
         
         // move towards the mouse
         
-        float pct = balls[i].pct; // use ball "speed" to...
-        
         // interpolate ball pos:
-        balls[i].pos = balls[i].pos * (1.-pct) + mouse * pct;
+        balls[i].pos += (mouse - balls[i].pos) * balls[i].lerp;
         
     }
     
@@ -59,7 +48,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    for (int i=0; i<balls.size(); i++){
+    for (int i=0; i<10; i++){
         
         ofSetColor(balls[i].color);
         ofDrawCircle(balls[i].pos, balls[i].radius);

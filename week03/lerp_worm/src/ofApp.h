@@ -4,15 +4,15 @@
 
 
 class Ball {
-    // quick ball class with
-    // position, radius, color and interpolation pct
+// quick ball class with
+// position, radius, color and interpolation pct
     
 public:
     
     glm::vec2 pos;
     float radius;
     ofColor color;
-    float pct;
+    float lerp;     // amount to interpolate when moving (percent of distance to target)
     
 };
 
@@ -35,6 +35,6 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    vector<Ball> balls; // array of balls
+    Ball balls[10]; // array of balls
 		
 };

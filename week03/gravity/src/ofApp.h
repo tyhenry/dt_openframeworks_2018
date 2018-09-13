@@ -23,8 +23,8 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
 
-    Ball balls [20];
+    Ball ball;
     
-    ofVec2f gravity;
+    glm::vec2 gravity;
 		
 };

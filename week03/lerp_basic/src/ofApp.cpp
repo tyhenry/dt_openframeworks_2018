@@ -31,7 +31,7 @@ void ofApp::update(){
 
     // style the ball 
         
-    float dist = glm::distance(mouse,pos);      // get distance to mouse
+    float dist = glm::distance(dest,pos);      // get distance to mouse
     
     // as distance increases, brightness increases:
     brightness = ofMap(dist, 0, 500, 50, 255);
