@@ -1,5 +1,17 @@
 # Week 3 
 
+## Pushing your Homework to Git
+
+[Instructions with more explanation of the commands.](../HOMEWORK.md) 
+Quick version:
+
+```bash
+# cd 'openFrameworks/apps/hwork123_dtOf_2018'		# inside your hw folder
+git add -A
+git commit -m "my week 3 homework"					# add a log message 
+git push origin master
+```
+
 ## Code Examples
 
 * **gravity** adding acceleration (gravity) to the old Bouncing Ball example
@@ -8,11 +20,11 @@
 
 ## Review
 
-### Graphics: Coordinates and Vectors
+### Graphics: Vectors and Coordinates
 
-In math and graphics, a "vector" is used to describe a position in 2D (or 3D, 4D...) coordinate space.  
+In math and graphics, we use the term "vector" to describe a position in 2D (or 3D, 4D...) space.  A "vector" is simply a set of values.  A 2-dimensional vector has 2 values: _x_ and _y_.  
 
-In openFrameworks, we use the class **glm::vec2** to describe a 2D vector.  (**glm** is a graphics math library recently added to openFrameworks.)
+In openFrameworks, we use **glm::vec2** as our 2D vector class.  (**glm** is a math graphics library recently added to openFrameworks.  **glm::vec2** means "**glm**'s **vec2** class")
 
 You can think of a vector as a position in space -  
 **or** as an arrow pointing from the origin _(0,0)_ to that position _(x,y)_.  

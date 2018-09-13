@@ -22,6 +22,6 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    ofVec2f ball;
-    int brightness;
+    glm::vec2 pos;
+    int brightness, radius;
 };

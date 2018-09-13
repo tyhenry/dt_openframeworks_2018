@@ -5,29 +5,39 @@ void ofApp::setup(){
     
     ofBackground(0);
     
-    ofSetCircleResolution(100); // prettier circles
+    ofSetCircleResolution(100);     // prettier circles
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     
-    // make a ball follow the mouse
+    // make a ball follow the mouse --
+
+
+    // interpolation - move between two points:
+    // current 1-------->---------2 destination
     
-    ofVec2f mouse;
-    mouse.x = ofGetMouseX();
-    mouse.y = ofGetMouseY();
+    glm::vec2 dest;     // mouse is destination point (#2)
+    dest.x = ofGetMouseX();
+    dest.y = ofGetMouseY();
     
-    float pct = .05; // every frame move ball 5% towards the mouse
+    float pct = .05;    // move ball 5% closer to mouse
     
-    ball = ball * (1.-pct) + mouse * pct;
+    // "interpolation" equation:
+
+    pos += pct * (dest - pos);  // move a bit closer
     
-    
-    // change the ball brightness with distance
-    
-    float dist = mouse.distance(ball);
+
+
+    // style the ball 
+        
+    float dist = glm::distance(mouse,pos);      // get distance to mouse
     
     // as distance increases, brightness increases:
     brightness = ofMap(dist, 0, 500, 50, 255);
+
+    // as distance increases, size decreases:
+    radius = ofMap(dist, 0, 500, 50, 1);
     
 }
 
@@ -35,7 +45,7 @@ void ofApp::update(){
 void ofApp::draw(){
     
     ofSetColor(brightness);
-    ofDrawCircle(ball, 50);
+    ofDrawCircle(pos, radius);
 
 }
 

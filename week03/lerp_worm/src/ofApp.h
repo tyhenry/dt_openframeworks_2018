@@ -8,10 +8,8 @@ class Ball {
     // position, radius, color and interpolation pct
     
 public:
-    Ball(){}
-    ~Ball(){}
     
-    ofVec2f pos;
+    glm::vec2 pos;
     float radius;
     ofColor color;
     float pct;

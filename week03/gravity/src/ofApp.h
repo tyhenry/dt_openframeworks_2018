@@ -6,6 +6,7 @@
 class ofApp : public ofBaseApp{
 
 public:
+
     void setup();
     void update();
     void draw();
@@ -22,9 +23,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
 
-    Ball ball1;
-    Ball ball2;
-    Ball ball3;
+    Ball balls [20];
     
     ofVec2f gravity;
 		

@@ -1,27 +1,26 @@
 #include "Ball.h"
 
-// constructor
-Ball::Ball() {
+// setup
+void Ball::setup() {
 
-	// inside the constructor you initialize the object's variables
+	// initialize the object's variables
 
 	// random radius between 10 and 50
-	radius = ofRandom(10,50);			
+	radius = ofRandom(10,20);			
 
-	// random color
+	// random colors
 	float red	= ofRandom(0,255);
 	float green	= ofRandom(0,255);		
 	float blue	= ofRandom(0,255);
 	color = ofColor(red, green, blue);
 
-	// random position in window
-	pos.x = ofRandom(radius, ofGetWidth()  - radius);
-	pos.y = ofRandom(radius, ofGetHeight() - radius);
+	// center on screen
+	pos.x = ofGetWidth() * 0.5;
+	pos.y = ofGetHeight() * 0.5;
 
 	// random x and y speeds/directions between -10 and 10
-	dir.x = ofRandom(-10,10);
-	dir.y = ofRandom(-10,10);
-    
+	vel.x = ofRandom(-10,10);
+	vel.y = ofRandom(-10,10);
     
 }
 
