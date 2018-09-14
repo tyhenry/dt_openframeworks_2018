@@ -44,12 +44,11 @@ Students will complete weekly homework assignments in the form of code "sketches
 |  09  | 10/23 | **MIDTERM PROJECT PRESENTATIONS**          	|
 |  10  | 10/30 | ofxAddons / ofxGui			              		|
 |  11  | 11/05 | Advanced 3D - ofNode and matrices          	|
-|  12  | 11/13 | Computer vision 1 - images as data            	|
-|  13  | 11/20 | Computer vision 2 - camera input				|
-|  14  | 11/27 | Machine learning primer						|
-|  15  | 12/04 | Shaders and GLSL                    			|
-|  16  | 12/11 | Final project workshop							|
-|  17  | 12/18 | **FINAL PROJECT PRESENTATIONS (Guest Crits)**	|
+|  12  | 11/13 | Computer vision 1 - images and data            |
+|  13  | 11/20 | Computer vision 2 - learning algorithms		|
+|  14  | 11/27 | Advanced 3D - Shaders and GLSL					|
+|  15  | 12/04 | Final project workshop                 		|
+|  16  | 12/11 | **FINAL PROJECT PRESENTATIONS (Guest Crits)**	|
 
 
 
