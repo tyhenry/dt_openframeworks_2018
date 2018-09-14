@@ -1,4 +1,18 @@
-# Pushing your Homework to Git
+# **Pulling** the latest example apps from the class repo
+
+In Git, we called syncing a folder _from_ GitHub "pulling" changes from the repo.  
+Every week, you can sync the latest example apps (in the folders `week01, week02, etc.`) to your computer.  
+Here's how:  
+
+```bash
+# navigate to your local class repo, i.e.
+cd ~/Documents/openFrameworks/dt_openframeworks_2018/ 	# or your folder path ...
+
+git pull   	# sync changes from remote repo on GitHub
+```
+
+
+# **Pushing** your Homework to Git
 
 Every week before class you should upload your code to your homework repo on GitHub.  
 In Git, uploading/syncing files to GitHub is called "pushing".  (the opposite of "pulling", or syncing _from_ GitHub) 
@@ -8,7 +22,8 @@ Feel free to bookmark this page to refer back to these instructions later.  As y
 
 
 ```bash
-# inside your local repo, i.e. 'cd ~/Documents/openFrameworks/henrt555_dtOf_2018/' ...
+# navigate to your local homework repo, i.e.
+cd ~/Documents/openFrameworks/apps/henrt555_dtOf_2018/ 	# your homework repo path...
 
 git status      # optional, but helpful -
                 # displays a list of recently modified files
