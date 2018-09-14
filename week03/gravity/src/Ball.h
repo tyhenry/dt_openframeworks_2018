@@ -6,23 +6,21 @@
  */
 
 #pragma once		
-#include "ofMain.h"		// ofMain.h lets our Ball "see" openFrameworks
+#include "ofMain.h"
 
 class Ball {
 
-public:		// other classes can access the following functions & variables:
+public:
 
-	void setup();
-    void update(glm::vec2 force); 	// update the ball with a force each time
+    void setup(float size, float bounceFactor);     // init size and ball's "bounciness"
+    void update(glm::vec2 force);                   // apply force
 	void draw();
-    
-	float radius;		// size
     
     glm::vec2 pos;		// position
     glm::vec2 vel;		// velocity (speed + direction)
-
-    glm::vec2 acc;		// accelleration (force)
-
-	ofColor color;
+    
+    float bounce;       // "bounciness" factor, from 0.0 to 1.0
+    float radius;       // ball size
+    
 
 };

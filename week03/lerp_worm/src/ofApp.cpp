@@ -7,14 +7,15 @@ void ofApp::setup(){
     
     ofSetCircleResolution(100);
     
-    // create 10 balls
+    // create 10 balls in array
+    int nBalls = 10;    // needs to match array size delcared in ofApp.h!
     
-    for (int i=0; i<10; i++){
+    for (int i=0; i<nBalls; i++){
         
-        balls[i].radius = ofMap(i, 0,9, 50, 10);
-        // radius based on ball array index (start with largest)
+        balls[i].radius = ofMap(i, 0, nBalls-1, 50, 10);
+        // radius based on ball array index
         
-        balls[i].lerp   = ofMap(balls[i].radius, 10,50, 0.1,.03);
+        balls[i].lerp   = ofMap(balls[i].radius, 10, 50, 0.1, .03);
         // the larger the ball, the slower the interpolation speed
         
         // set color

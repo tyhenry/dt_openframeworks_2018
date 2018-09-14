@@ -2,19 +2,22 @@
 
 #include "ofMain.h"
 
+// add an extra class quickly:
+
+// super simple Ball class with no functions,
+// just position, radius, color and interpolation pct
 
 class Ball {
-// quick ball class with
-// position, radius, color and interpolation pct
-    
 public:
     
     glm::vec2 pos;
     float radius;
     ofColor color;
-    float lerp;     // amount to interpolate when moving (percent of distance to target)
-    
+    float lerp;     // amount to interpolate when moving
+                    // (percentage of distance to target)
 };
+
+// now back to our ofApp class as normal
 
 class ofApp : public ofBaseApp{
 
@@ -35,6 +38,6 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    Ball balls[10]; // array of balls
+    Ball balls[10];     // array of 10 Balls, see class declaration above
 		
 };

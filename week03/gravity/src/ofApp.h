@@ -3,6 +3,12 @@
 #include "ofMain.h"
 #include "Ball.h"	// include our ball class
 
+// we declare this number outside of our class
+// it's a "global constant" for our app:
+
+const int numBalls = 5;    // 'const' means numBalls can never change
+
+
 class ofApp : public ofBaseApp{
 
 public:
@@ -23,7 +29,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
 
-    Ball ball;
+    Ball balls[numBalls];
     
     glm::vec2 gravity;
 		

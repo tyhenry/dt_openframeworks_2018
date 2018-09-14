@@ -4,10 +4,17 @@
 void ofApp::setup(){
 
 	ofBackground(0);
+    ofSetCircleResolution(100);
     
-    gravity = glm::vec2(0,0); 	// start with no gravity
+    gravity = glm::vec2(0,0); 	        // start with no gravity
 	
-    ball.setup();
+    for (int i=0; i<numBalls; i++){                 // numBalls defined in ofApp.h
+        
+        float radius = ofMap(i, 0, numBalls, 50, 5);
+        float bounce = ofMap(radius, 5, 50, 0.9, 0.3);    // assign a bounciness factor (0-1 max range)
+        
+        balls[i].setup(radius, bounce);                    // initialize
+    }
 }
 
 //--------------------------------------------------------------
@@ -17,15 +24,18 @@ void ofApp::update(){
     gravity.x = ofMap(ofGetMouseX(), 0, ofGetWidth(), -.3, .3);
     gravity.y = ofMap(ofGetMouseY(), 0, ofGetHeight(), -.3, .3);
 
-
-    ball.update(gravity);
+    for (int i=0; i<numBalls; i++){
+        balls[i].update(gravity);
+    }
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-    ball.draw();
+    for (int i=0; i<numBalls; i++){
+        balls[i].draw();
+    }
     
     // draw some info on screen
     string gravityInfo = "'gravity' force (x,y): " + ofToString(gravity, 2);

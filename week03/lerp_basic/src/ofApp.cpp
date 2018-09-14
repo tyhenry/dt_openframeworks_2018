@@ -12,32 +12,37 @@ void ofApp::setup(){
 void ofApp::update(){
     
     // make a ball follow the mouse --
+    // and slow down when it gets closer
 
-
-    // interpolation - move between two points:
-    // current 1-------->---------2 destination
+    // we use "interpolation" -- "lerp" for short:
+    // it means we move just a percentage of the way between two points
+    // -- this creates a slowing or "easing" effect
     
-    glm::vec2 dest;     // mouse is destination point (#2)
-    dest.x = ofGetMouseX();
-    dest.y = ofGetMouseY();
     
-    float pct = .05;    // move ball 5% closer to mouse
+    glm::vec2 destination;                  // mouse is destination point
+    destination.x   = ofGetMouseX();
+    destination.y   = ofGetMouseY();
+    
+    float percent   = .05;                  // we'll move the ball 5% closer to mouse
     
     // "interpolation" equation:
 
-    pos += pct * (dest - pos);  // move a bit closer
+    glm::vec2 diff = destination - pos;     // calc vector from current position
+                                            // to mouse (destination)
+    
+    pos += percent * diff;                  // move 5% of that
     
 
-
-    // style the ball 
+    
+    // style the ball with brightness and size
         
-    float dist = glm::distance(dest,pos);      // get distance to mouse
+    float dist = glm::distance(destination,pos);      // distance to mouse
     
     // as distance increases, brightness increases:
-    brightness = ofMap(dist, 0, 500, 50, 255);
+    brightness = ofMap(dist, 0, 500, 100, 200);
 
     // as distance increases, size decreases:
-    radius = ofMap(dist, 0, 500, 50, 1);
+    radius = ofMap(dist, 0, 500, 30, 10);
     
 }
 
