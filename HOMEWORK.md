@@ -1,7 +1,7 @@
 # **Pulling** the latest example apps from the class repo
 
 In Git, we called syncing a folder _from_ GitHub "pulling" changes from the repo.  
-Every week, you can sync the latest example apps (in the folders `week01, week02, etc.`) to your computer.  
+Every week, you can sync the latest example apps from the class repo (in the folders `week01, week02, etc.`) to your computer.  
 Here's how:  
 
 ```bash
