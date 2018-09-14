@@ -39,13 +39,14 @@ This will review the concepts of vectors and force, and introduce more informati
 3. Don't forget to **[push](../HOMEWORK.md)** your sketches to your homework repo on GitHub **before class**:
 
 
-## Code Examples
+## Week 3 App Examples
 
 * **gravity** adding acceleration (gravity) to the old Bouncing Ball example
 * **lerp_basic** illustration of interpolation and "Zeno" easing technique
 * **lerp_worm** using ofMap to create a multicolor worm that follows the mouse
 
-## Review
+
+## Week 3 Review
 
 ### Graphics: Vectors and Coordinates
 
@@ -78,6 +79,44 @@ glm::vec2 scaledVec = glm::vec2(2,3) * 2.;
 A vector with a length of 1.0 is called a _"unit vector"_.  This is useful sometimes to represent just a direction.  
 To find a unit vector, we divide any vector by its length - this is called _"normalizing"_ the vector.  
 The unit vector can then be _scaled_ to a new length: `unitVector *= magnitude`
+
+### Movement and Force
+
+We use vectors to represent both position, and movement, or _velocity_.  
+Here's how we might use velocity to change position over time. 
+
+```c++
+glm::vec2 position = glm::vec2(1,1); // start at (1,1)
+glm::vec2 velocity = glm::vec2(1,2); // move 1 along X axis, 2 along Y axis
+
+void update() { 
+    position += velocity;  // update position by adding velocity
+
+    // position: (1,1) -> (2,3) -> (3,5) -> etc.
+}
+```
+
+When a **force** is applied to an object in motion, it changes the velocity of the object.  
+This is called **acceleration**, which we can also represent with an `glm::vec2`:
+
+```c++
+// create a downward acceleration force
+
+glm::vec2 pos = glm::vec2(1,1);
+glm::vec2 vel = glm::vec2(1,2);
+glm::vec2 acc = glm::vec2(0,1);     // adjust velocity by (0,1) each frame
+
+void update() { 
+    vel += acc;     // update velocity by acceleration
+    pos += vel;     // update position by velocity
+
+    //           frame 0   frame 1  frame 2
+    //           -------   -------  -------
+    // accel   : (0,1)     (0,1)    (0,1)
+    // velocity: (1,2) --> (1,3) -> (1,4) -> etc.
+    // position: (1,1) --> (2,4) -> (3,8) -> etc.
+}
+```
 
 
 ### Interpolation
@@ -155,45 +194,6 @@ void update(){
     
     // interpolation
     ball.position = ball.position * (1.-pct) + target * (pct);
-}
-```
-
-
-### Movement and Force
-
-We use vectors to represent both position, and movement, or _velocity_.  
-Here's how we might use velocity to change position over time. 
-
-```c++
-glm::vec2 position = glm::vec2(1,1); // start at (1,1)
-glm::vec2 velocity = glm::vec2(1,2); // move 1 along X axis, 2 along Y axis
-
-void update() { 
-    position += velocity;  // update position by adding velocity
-
-    // position: (1,1) -> (2,3) -> (3,5) -> etc.
-}
-```
-
-When a **force** is applied to an object in motion, it changes the velocity of the object.  
-This is called **acceleration**, which we can also represent with an `glm::vec2`:
-
-```c++
-// create a downward acceleration force
-
-glm::vec2 pos = glm::vec2(1,1);
-glm::vec2 vel = glm::vec2(1,2);
-glm::vec2 acc = glm::vec2(0,1);     // adjust velocity by (0,1) each frame
-
-void update() { 
-    vel += acc;     // update velocity by acceleration
-    pos += vel;     // update position by velocity
-
-    //           frame 0   frame 1  frame 2
-    //           -------   -------  -------
-    // accel   : (0,1)     (0,1)    (0,1)
-    // velocity: (1,2) --> (1,3) -> (1,4) -> etc.
-    // position: (1,1) --> (2,4) -> (3,8) -> etc.
 }
 ```
 
