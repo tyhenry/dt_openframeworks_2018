@@ -20,8 +20,8 @@ void Ball::setup(glm::vec2 position, float size, float bounce){
     
     // set color from bounciness:
     
-    ofColor color1 = ofColor(255,40,120);       // pink
-    ofColor color2 = ofColor(200,10,180);       // purple
+    ofColor color1 = ofColor(80,40,175);        // purple
+    ofColor color2 = ofColor(255,10,220);       // pink
     color = color1.lerp(color2, bounceFactor);  // bounceFactor is 0-1, like a percent
     
 }
