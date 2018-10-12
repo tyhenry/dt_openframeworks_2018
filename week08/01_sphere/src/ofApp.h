@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Box.hpp"
 
 class ofApp : public ofBaseApp{
 
