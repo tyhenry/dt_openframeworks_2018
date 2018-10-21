@@ -22,4 +22,6 @@ public:
     glm::vec2 pos, vel, acc;
     float mass;
     
+    float bornTime;
+    
 };

@@ -52,6 +52,15 @@ void ParticleSystem::update(int numNewParticles, int maxParticles)
     while (particles.size() > maxParticles)     // keep the number of particles under a limit
     {
         particles.erase(particles.begin());     // erase the oldest particle
+        
+//        particles.pop_back();
+        
+        
+//        vector<Particle>::iterator first = particles.begin();
+//        auto other = particles.begin();
+//
+//        auto second = particles.begin() + 3;
+//        auto end    = particles.end();
     }
     
 }
