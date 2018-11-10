@@ -12,9 +12,10 @@ Plane::Plane(){
     
 }
 
+// --------------------------------
 void Plane::setup(float width, float height, float cols, float rows){
     
-    //  create a 3D grid mesh using ofMesh class
+    // create a 3D grid mesh using ofMesh class
     
     // loop through grid rows and columns to make points
     
@@ -79,11 +80,13 @@ void Plane::setup(float width, float height, float cols, float rows){
         }
     }
     
-    // set default vertex radius 5px
+    // set default vertex radius
     vertexRadius = 1.f;
     
 }
 
+
+// --------------------------------
 void Plane::updateNoise(){
     
     float time = ofGetElapsedTimef();
@@ -96,11 +99,12 @@ void Plane::updateNoise(){
         //  '&' - vertex is a 'reference' to the actual point in the mesh (not a copy)
         
         
-        //    calc a noise value from -1 to 1
-        float noise = ofSignedNoise ( vertex.x * noiseScale.get().x,    // x pos
-                                      vertex.y * noiseScale.get().y,    // y pos
-                                      time * noiseFreq );               // time (z) to animate
-        
+        //  calc a noise value from -1 to 1
+        float noise =
+        ofSignedNoise ( vertex.x * noiseScale.get().x,    // x pos
+                        vertex.y * noiseScale.get().y,    // y pos
+                        time * noiseFreq    // time (z) to animate
+                       );
         
         //  change vertex z depth based on noise and amplitude setting
         vertex.z = noise * noiseAmp;
@@ -108,6 +112,8 @@ void Plane::updateNoise(){
     }
 }
 
+
+// --------------------------------
 void Plane::updateColors(){
     
     // map colors based on vertex z / depth
@@ -128,12 +134,14 @@ void Plane::updateColors(){
 
 }
 
+// draw surface
+// --------------------------------
 void Plane::draw(){
     
     ofPushMatrix();
     
-    //  inherit from ofNode to keep track of
-    //  mesh position, scale and rotation
+    //  we inherit from ofNode to keep track of
+    //  3D position, scale and rotation
     ofTranslate( getPosition() );
     ofScale( getScale() );
     /*
@@ -149,6 +157,8 @@ void Plane::draw(){
     ofPopMatrix();
 }
 
+// draw mesh
+// --------------------------------
 void Plane::drawWireframe(){
     ofPushMatrix();
     
@@ -161,6 +171,8 @@ void Plane::drawWireframe(){
     ofPopMatrix();
 }
 
+// draw points
+// --------------------------------
 void Plane::drawVertices(){
     
     // custom draw vertices:
@@ -170,16 +182,13 @@ void Plane::drawVertices(){
     if (drawOrigin) ofDrawAxis(100);
     
     for (int i=0; i<mesh.getVertices().size(); i++){
-        
+        ofPushStyle();
         // draw points as spheres
         glm::vec3 point   = mesh.getVertices()[i];
-        
-        ofPushStyle();
         
         if (mesh.getNumColors() > i){   // check for color
             ofSetColor( mesh.getColors()[i] );
         }
-
         ofDrawSphere( point, vertexRadius );
 
         ofPopStyle();

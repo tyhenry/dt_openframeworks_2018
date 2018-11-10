@@ -31,8 +31,7 @@ public:
     ofxPanel gui;
     ofParameter<float> scale;
     ofParameter<glm::vec3> pos;
-    ofParameter<int> drawMode;
-        // 0 - mesh faces, 1 - wireframe, 2 - points
+    ofParameter<bool> drawFaces, drawWireframes, drawVertices;
     
     ofBoxPrimitive box;
     

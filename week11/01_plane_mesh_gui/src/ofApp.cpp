@@ -9,13 +9,14 @@ void ofApp::setup(){
     
     gui.setup();
     
-    // add / setup ofParameters:
-    
+    // add / setup ofParameters
     // gui.add( parameter.set ( "name", default, min, max ) );
     
+    gui.add( drawFaces.set("draw faces", true) );
+    gui.add( drawWireframes.set("draw wires", false) );
+    gui.add( drawVertices.set("draw vertices", false) );
     gui.add( scale.set("scale", 1.0, 0.0, 3.0) );
-    gui.add( pos.set("position", glm::vec3(0), glm::vec3(-500), glm::vec3(500)) );
-    gui.add( drawMode.set("draw mode", 0, 0, 2));
+    gui.add( pos.set("position", glm::vec3(0), glm::vec3(-200), glm::vec3(200)) );
     
     // add parameters from Plane class
     gui.add( mesh.noiseScale.set("noise scale", glm::vec2(.01), glm::vec2(0.), glm::vec2(.05)));
@@ -27,8 +28,8 @@ void ofApp::setup(){
     gui.add( mesh.drawOrigin.set("draw origin", false));
 
     
-    
-    mesh.setup(500,500, 100,100);    // width, height, rows, cols
+    // create plane mesh
+    mesh.setup(600,600, 100,100);    // width, height, rows, cols
     
 }
 
@@ -52,15 +53,15 @@ void ofApp::draw(){
     
     if (mesh.drawOrigin) ofDrawAxis(100.f);
     
-     if (drawMode == 0){
-         mesh.draw();
-     }
-     else if (drawMode == 1){
-         mesh.drawWireframe();
-     }
-     else if (drawMode == 2){
-         mesh.drawVertices();
-     }
+    if (drawFaces){
+        mesh.draw();
+    }
+    if (drawWireframes){
+        mesh.drawWireframe();
+    }
+    if (drawVertices){
+        mesh.drawVertices();
+    }
     
     ofDisableDepthTest();
     
