@@ -8,9 +8,9 @@ Work on a sketch of your choosing.  You could:
  - Prototype an idea or technique you might want to use for your final
  - Try out an [ofxAddon](https://www.ofxaddons.com)
 
-- **For more information on 3D meshes (apart from the example projects):**
-  **Read the ["Generating Meshes from Image"](http://openframeworks.cc/ofBook/chapters/generativemesh.html)** chapter of ofBook
-    - this will review 3D meshes and introduces image sampling
+Note: _For more information on 3D meshes (apart from the example projects):_ 
+  Read the ["Generating Meshes from Image"](http://openframeworks.cc/ofBook/chapters/generativemesh.html) chapter of ofBook
+   - this will review 3D meshes and introduces image sampling
 
 # Apps
 
