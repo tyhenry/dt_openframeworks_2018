@@ -6,10 +6,10 @@ Work on a sketch of your choosing.  You could:
 
  - Rework an old project from your homework repo into a 3D scene
  - Prototype an idea or technique you might want to use for your final
- - Try out an [ofxAddon](https://www.ofxaddons.com)
+ - Try out an [ofxAddon](http://www.ofxaddons.com/)
 
-Note: _For more information on 3D meshes (apart from the example projects):_ 
-  Read the ["Generating Meshes from Image"](http://openframeworks.cc/ofBook/chapters/generativemesh.html) chapter of ofBook
+Note: _For more information on 3D meshes (apart from the example projects):_  
+  Read the ["Generating Meshes from Image"](http://openframeworks.cc/ofBook/chapters/generativemesh.html) chapter of ofBook  
    - this will review 3D meshes and introduces image sampling
 
 # Apps
