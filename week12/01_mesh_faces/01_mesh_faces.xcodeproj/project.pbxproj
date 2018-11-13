@@ -549,7 +549,7 @@ fi
 				<key>isa</key>
 				<string>PBXNativeTarget</string>
 				<key>name</key>
-				<string>ofMeshFaces</string>
+				<string>01_mesh_faces</string>
 				<key>productName</key>
 				<string>myOFApp</string>
 				<key>productReference</key>
@@ -566,7 +566,7 @@ fi
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>path</key>
-				<string>ofMeshFacesDebug.app</string>
+				<string>01_mesh_facesDebug.app</string>
 				<key>sourceTree</key>
 				<string>BUILT_PRODUCTS_DIR</string>
 			</dict>

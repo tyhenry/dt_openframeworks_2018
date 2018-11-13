@@ -549,7 +549,7 @@ fi
 				<key>isa</key>
 				<string>PBXNativeTarget</string>
 				<key>name</key>
-				<string>colorChannels</string>
+				<string>03_color_channels</string>
 				<key>productName</key>
 				<string>myOFApp</string>
 				<key>productReference</key>
@@ -566,7 +566,7 @@ fi
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>path</key>
-				<string>colorChannelsDebug.app</string>
+				<string>03_color_channelsDebug.app</string>
 				<key>sourceTree</key>
 				<string>BUILT_PRODUCTS_DIR</string>
 			</dict>

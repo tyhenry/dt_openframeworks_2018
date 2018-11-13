@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	
-	ofBackground(255);
+	ofBackground(0);
 	
 	camW = 640;
 	camH = 480;
@@ -75,7 +75,7 @@ void ofApp::draw(){
 	ofSetRectMode(OF_RECTMODE_CENTER);
 	
 	// draw using "add" overlay blending effect
-	ofEnableBlendMode(OF_BLENDMODE_SUBTRACT);
+	ofEnableBlendMode(OF_BLENDMODE_ADD);
 	
 	// spread the RGB images on screen based on mouse
     glm::vec2 center    = ofGetWindowSize() * 0.5;

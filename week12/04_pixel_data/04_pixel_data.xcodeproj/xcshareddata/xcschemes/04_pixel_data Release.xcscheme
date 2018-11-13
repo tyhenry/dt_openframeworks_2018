@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-               BuildableName = "ofMeshFaces.app"
-               BlueprintName = "ofMeshFaces"
-               ReferencedContainer = "container:ofMeshFaces.xcodeproj">
+               BuildableName = "04_pixel_data.app"
+               BlueprintName = "04_pixel_data"
+               ReferencedContainer = "container:04_pixel_data.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "ofMeshFaces.app"
-            BlueprintName = "ofMeshFaces"
-            ReferencedContainer = "container:ofMeshFaces.xcodeproj">
+            BuildableName = "04_pixel_data.app"
+            BlueprintName = "04_pixel_data"
+            ReferencedContainer = "container:04_pixel_data.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "ofMeshFaces.app"
-            BlueprintName = "ofMeshFaces"
-            ReferencedContainer = "container:ofMeshFaces.xcodeproj">
+            BuildableName = "04_pixel_data.app"
+            BlueprintName = "04_pixel_data"
+            ReferencedContainer = "container:04_pixel_data.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "ofMeshFaces.app"
-            BlueprintName = "ofMeshFaces"
-            ReferencedContainer = "container:ofMeshFaces.xcodeproj">
+            BuildableName = "04_pixel_data.app"
+            BlueprintName = "04_pixel_data"
+            ReferencedContainer = "container:04_pixel_data.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
