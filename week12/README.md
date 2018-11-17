@@ -69,6 +69,8 @@ Triangles have a front (clockwise) and back (counter-clockwise)._
 	One **texture coordinate** per index (so 3 per triangle).  
 	Each represents a corresponding 2D position on the image.
 
+	![tex coords](http://www.c-jump.com/bcc/common/Talk3/OpenGL/Wk07_texture/const_images/texturemapping.png)
+
   - **normals:** how the mesh faces are oriented to reflect light -  
 
   	`ofMesh::getNormals();	// return vector<glm::vec3>` 
@@ -76,6 +78,9 @@ Triangles have a front (clockwise) and back (counter-clockwise)._
 	**Normals** are vector lines that stick out from the mesh surface.  
 	There is one **normal** per index (so 3 per triangle).
 	They are used to calculate 3D lighting effects (when lighting is enabled).
+
+	![normals](normals.png)
+
 
 
 _note:  
