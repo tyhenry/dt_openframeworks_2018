@@ -28,9 +28,11 @@ Indices are listed in groups of threes to connect triangles.  Indices refer to t
 Indices should be listed in clockwise order.
 
 ![mesh example image](square_mesh_triangles.jpg)
+
 indices = [ 0,1,2, 1,2,3, etc]
 
-ofMesh can also contain other (optional) mesh data: `texture coordinates`, and `normals`.
+`ofMesh` can also contain other (optional) mesh data -
+`texture coordinates`, and `normals`:  
 
   - **texture coordinates:** how the mesh surface maps to a 2D image (a `texture`) -  
   		`ofMesh::getTexCoords();	// returns vector<glm::vec2>`  
