@@ -9,12 +9,12 @@ void ofApp::setup(){
     sphere.mapTexCoordsFromTexture(earthImg.getTexture());
     
     gui.setup();
-    gui.add( bVerts.set("draw vertices", true));
-    gui.add( bWires.set("draw wireframe", true));
+    gui.add( bLight.set("lighting", true));
     gui.add( bFaces.set("draw faces", true));
     gui.add( bTexture.set("draw texture", true));
+    gui.add( bWires.set("draw wireframe", true));
+    gui.add( bVerts.set("draw vertices", true));
     gui.add( bNormals.set("draw normals", true));
-    gui.add( bLight.set("lighting", true));
     
     
     // setup sun
