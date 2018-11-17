@@ -40,17 +40,16 @@ Triangles have a front (clockwise) and back (counter-clockwise)._
 `texture coordinates`, and `normals`:  
 
   - **texture coordinates:** how the mesh surface maps to a 2D image (a `texture`) - 
-
-		ofMesh::getTexCoords();	// returns vector<glm::vec2> 
+	`ofMesh::getTexCoords();	// returns vector<glm::vec2>`
 	
 	There is one `texture coordinate` per index (so 3 per triangle).  
 	Each represents a 2D position on the image.
 
   - **normals:** how the mesh faces are oriented to reflect light -  
+  	`ofMesh::getNormals();	// return vector<glm::vec3>` 
 
-  		`ofMesh::getNormals();	// return vector<glm::vec3>`  
-  		`Normals` are vector lines that stick out from the mesh surface.  
-  		They are used to calculate 3D lighting effects (when lighting is enabled).
+	`Normals` are vector lines that stick out from the mesh surface.  
+	They are used to calculate 3D lighting effects (when lighting is enabled).
 
 
 _note:  
