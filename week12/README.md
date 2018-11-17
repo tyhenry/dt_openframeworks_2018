@@ -10,6 +10,20 @@
   - **06_mesh_texture** - _new:_ draw a sphere mesh with lighting and planet texture
   - **07_OSC_mouse** - _new:_ send and receive OSC network messages
 
+## Homework
+
+Your choice - you can experiment with addons, or 3D, or image processing - or work towards your final project!
+
+Here are some suggestions for sketches you could try:  
+
+  - **Glitchy**
+	Load an image or video (e.g. ofImage, ofVideoGrabber, etc.) and alter it through code! You can manipulate the colors, warp the shape using ofMesh, or experiment with your own methods.
+
+  - **3D World**  
+	Create a 3D scene using ofEasyCam, and place objects around your space.  
+	You can use primitive 3D shapes like ofBoxPrimitive, or use ofMesh.  
+	Animate your world with motion and color (and lighting if you wish).
+
 ## Review
 
 ### 3D Meshes / `ofMesh`
