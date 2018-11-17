@@ -41,11 +41,11 @@ Triangles have a front (clockwise) and back (counter-clockwise)._
 
   - **texture coordinates:** how the mesh surface maps to a 2D image (a `texture`) - 
 
-		```c++
-		ofMesh::getTexCoords();	// returns vector<glm::vec2> 
-		There is one `texture coordinate` per index (so 3 per triangle).  
-		Each represents a 2D position on the image.
-		```
+```c++
+	ofMesh::getTexCoords();	// returns vector<glm::vec2> 
+	There is one `texture coordinate` per index (so 3 per triangle).  
+	Each represents a 2D position on the image.
+```
 
   - **normals:** how the mesh faces are oriented to reflect light -  
 
