@@ -99,6 +99,9 @@ OF_PRIMITIVE_LINES, OF_PRIMITIVE_LINE_STRIP, OF_PRIMITIVE_LINE_LOOP, OF_PRIMITIV
 ```
 Check out the [ofMesh documentation](https://openframeworks.cc/documentation/3d/ofMesh/#show_setMode) for more info on primitive modes.
 
+![oF (gl) primitive modes](of_primitive_modes.png)
+
+
 
 
 
