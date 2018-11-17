@@ -45,3 +45,46 @@ void Ball::update(){
 void Ball::draw(){
     ofDrawCircle(pos, radius);
 }
+
+// --------------------------------------------------------
+void Ball::reflect(glm::vec2 line){
+    
+    /*
+      v
+       \
+        \   *
+         \ /
+     -----|-----> line
+     
+     http://www.3dkingdoms.com/weekly/weekly.php?a=2
+     
+     reflected vector = V - 2*(V dot N)*N
+     
+     V = original vector (ball velocity)
+     N = "normal" of the line (a "normal" is a perpendicular unit vector)
+     
+     note: (V dot N) is the "dot product" of V and N vectors
+            ( (x,y) dot (a,b) ==> x * a + y * b )
+     
+    
+     1. find the normal of the line:
+     
+           n
+           ↑
+        -------> vector (line)
+     
+        normal of vector(x,y) = (-y,x) / length
+        https://stackoverflow.com/a/1243676
+    
+     */
+    float length = glm::length(line);
+    if (length != 0){
+        // normal of line = (y,-x) / length
+        glm::vec2 normal = line * glm::vec2(1,-1) / length;
+        // reflected vector = -2*(V dot N)*N + V
+        vel = 2*glm::dot(vel,normal)*normal - vel;
+        
+    }
+    
+    
+}

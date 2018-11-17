@@ -108,8 +108,13 @@ void ofApp::draw(){
     // draw mouse pos
     glm::vec2 mousePos = glm::vec2(ofGetMouseX(), ofGetMouseY());
     ofSetColor(255);
-    ofDrawCircle(mousePos, 5);
-    ofDrawBitmapStringHighlight("mouse pos: " + ofToString(mousePos), 20, 20);
+    ofDrawCircle(mousePos, ofGetMousePressed() ? 8 : 5);
+    
+    // draw info
+    string sendInfo =
+        "mouse pos: " + ofToString(mousePos) + "\n" +
+        "sending to: " + SEND_HOST + " port " + ofToString(SEND_PORT);
+    ofDrawBitmapStringHighlight(sendInfo, 20, 20);
     
     
     
@@ -139,8 +144,11 @@ void ofApp::draw(){
     ofSetColor(color);
     ofDrawCircle(oscMousePos, radius);
     
-    beige.a = 127;
-    ofDrawBitmapStringHighlight("OSC received mouse pos: " + ofToString(oscMousePos), 20, 20, beige, color);
+    // draw info
+    string receiveInfo =
+        "OSC received mouse pos: " + ofToString(oscMousePos) + "\n" +
+        "receiving on port: " + ofToString(RECEIVE_PORT);
+    ofDrawBitmapStringHighlight(receiveInfo, 20, 20, beige, color);
     
 
 }

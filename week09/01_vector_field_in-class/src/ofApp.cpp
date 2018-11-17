@@ -23,6 +23,9 @@ void ofApp::setup(){
     vectorField.setFieldNoisily(0.1);
     
     bDrawField = false;
+    bAnimate = false;
+    bDrawTrails = false;
+    bVectorField = true;
 
 }
 
@@ -35,9 +38,12 @@ void ofApp::update(){
     for (int i=0; i<particles.size(); i++)
     {
         particles[i].update();
-        glm::vec2 force = vectorField.getForceAtPos(particles[i].pos);
-        particles[i].applyForce( force );
-        particles[i].applyDrag(0.05);
+        if (bVectorField)
+        {
+            glm::vec2 force = vectorField.getForceAtPos(particles[i].pos);
+            particles[i].applyForce( force );
+            particles[i].applyDrag(0.05);
+        }
         
         glm::vec2 pos = particles[i].pos;
         if (pos.x < 0){
@@ -59,6 +65,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+
+    
     
     if (bDrawTrails){
         ofPushStyle();
@@ -66,6 +74,11 @@ void ofApp::draw(){
         ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
         ofPopStyle();
     }
+    
+    
+    cam.begin();
+    ofEnableDepthTest();
+    ofTranslate(-ofGetWidth()*0.5, -ofGetHeight()*0.5);
     
     for (int i=0; i<particles.size(); i++)
     {
@@ -75,6 +88,10 @@ void ofApp::draw(){
     if (bDrawField){
         vectorField.draw(80);
     }
+    
+    cam.end();
+    ofDisableDepthTest();
+    
 
 }
 
@@ -92,6 +109,10 @@ void ofApp::keyPressed(int key){
     {
         bDrawTrails = true;
         ofSetBackgroundAuto(false);
+    }
+    else if (key == 'v')
+    {
+        bVectorField = false;
     }
     
 
@@ -111,6 +132,10 @@ void ofApp::keyReleased(int key){
     {
         bDrawTrails = false;
         ofSetBackgroundAuto(true);
+    }
+    else if (key == 'v')
+    {
+        bVectorField = true;
     }
 }
 

@@ -3,8 +3,8 @@
 // we declare these values as "globals" - they are outside of any class
 //--------------------------------------------------------------
 
-const int nMovers		= 20;
-const int nAttractors	= 10;
+const int nMovers		= 40;
+const int nAttractors	= 30;
 // "const" means the values can never change (they are "hard-coded" here)
 
 

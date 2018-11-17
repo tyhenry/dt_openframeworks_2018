@@ -24,10 +24,10 @@ void ofApp::setup(){
     triangle.addVertex(pt0);
     triangle.addColor(ofColor::red);    // vertex 0 red
     
-    triangle.addVertex(pt1);
+    triangle.addVertex(pt2);
     triangle.addColor(ofColor::green);  // vertex 1 green
     
-    triangle.addVertex(pt2);
+    triangle.addVertex(pt1);
     triangle.addColor(ofColor::blue);   // vertex 2 blue
     
     // add 3 vertex indices in a row to connect the triangle:

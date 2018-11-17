@@ -52,8 +52,9 @@ void ofApp::update(){
     
     bool paddleCollided = paddle.testCollision(ball.pos, ball.radius);
     
-    // set paddle color
-    if (paddleCollided) { paddleColor = ofColor(255,0,0);
+    if (paddleCollided) {
+        ball.reflect(paddle.getDirection());
+        paddleColor = ofColor(255,0,0); // set paddle color
     } else { paddleColor = ofColor(0,0,255); }
     
     
@@ -89,6 +90,10 @@ void ofApp::draw(){
     
     ofSetColor(paddleColor);
     paddle.draw();
+    
+    ofSetColor(255);
+    ofDrawLine(paddle.pos, paddle.pos + paddle.getDirection() * 200);
+    ofDrawLine(paddle.pos, paddle.pos + paddle.getNormal() * 100);
     
     ofSetColor(rectColor);
     ofDrawRectangle(rectCollider);

@@ -26,6 +26,8 @@ class ofApp : public ofBaseApp{
     vector<Particle> particles;
     VectorField vectorField;
     
-    bool bDrawField, bAnimate, bDrawTrails;
+    bool bDrawField, bAnimate, bDrawTrails, bVectorField;
+    
+    ofEasyCam cam;
 		
 };

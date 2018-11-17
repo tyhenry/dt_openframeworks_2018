@@ -22,7 +22,7 @@ public:
 	void gotMessage(ofMessage msg);
 	
 	ofEasyCam cam;
-	ofSpherePrimitive sphere;
+	ofIcoSpherePrimitive sphere;
 	
     // we can access and modify
     // the mesh's faces (triangles)

@@ -83,19 +83,35 @@ void PaddleCircles::rotate(float degrees)
 bool PaddleCircles::testCollision(glm::vec2 ballPos, float ballRadius)
 {
     bool collided = false;
+    
     // check each circle of the paddle for collision:
-    for (int i=0; i<circlePositions.size(); i++)
-    {
+    for (int i=0; i<circlePositions.size(); i++) {
+        
         glm::vec2 diff = circlePositions[i] - ballPos;
         float distance = glm::length(diff);
-        if (distance <= circleRadii[i] + ballRadius)
-        {
+        if (distance <= circleRadii[i] + ballRadius) {
             // collision!
             collided = true;
-            break;  // exit for loop here! we don't want to continue checking
+            break;  // exit for-loop here! we don't want to continue checking
         }
     }
     return collided;    // return the result
+}
+
+glm::vec2 PaddleCircles::getDirection()
+{
+    return glm::vec2(cos(angleRadians), sin(angleRadians));
+}
+
+glm::vec2 PaddleCircles::getNormal()
+{
+    glm::vec2 normal;
+    glm::vec2 dir = getDirection();
+    float length = glm::length(dir);
+    if (length != 0){
+        normal = glm::vec2(dir.y, -dir.x) / length;
+    }
+    return normal;
 }
 
 

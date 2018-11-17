@@ -32,6 +32,8 @@ public:
 	ofParameter<float>	scale;		// slider control
     ofParameter<float>  rotation;   // rotation degrees
     ofParameter<bool>   bRotate;    // auto-rotate mesh toggle
+    ofParameter<bool>   bTexture;   // toggle color texture
+    ofParameter<bool>   bSolid;     // draw solid mesh surface
 	ofParameter<bool>	bWires;		// draw wireframe toggle
 	ofParameter<bool>	bAxis;		// draw scene axis toggle
 		

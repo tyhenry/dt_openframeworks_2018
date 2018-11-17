@@ -37,6 +37,7 @@ void ofApp::setup(){
     // set( "label", default )
     
     gui.add( bRotate.set("auto-rotate", true) );
+    gui.add( bTexture.set("use texture", true) );
 	gui.add( bWires.set("draw wireframe", true) );
 	gui.add( bAxis.set("draw axis", false) );
 	
@@ -92,9 +93,14 @@ void ofApp::draw(){
 	
     ofRotateXDeg(rotation);
 	
-	vid.bind();		// draw the webcam texture on the mesh
+    if (bTexture) {
+        vid.bind(); // draw the webcam texture on the mesh
+    }
 	plane.draw();
-	vid.unbind();
+    
+    if (bTexture) {
+        vid.unbind();   // don't forget to unbind after you bind!
+    }
 	
     if (bWires){
         ofPushStyle();

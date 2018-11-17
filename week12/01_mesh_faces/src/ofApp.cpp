@@ -5,7 +5,7 @@ void ofApp::setup(){
 	
 	ofBackground(0);
 	
-	sphere = ofSpherePrimitive(200, 20);    // radius, resolution
+	sphere = ofIcoSpherePrimitive(200, 3);    // radius, resolution
 	
     // store the original mesh faces before we modify them
     
@@ -27,7 +27,8 @@ void ofApp::update(){
 	for(int i = 0; i < triangles.size(); i++ ) {
 		
         // the "normal" of a triangle is a vector pointing away from its face
-        glm::vec3 faceNormal  = triangles[i].getFaceNormal();    // unit vector / length 1
+        glm::vec3 faceNormal  = triangles[i].getFaceNormal();
+            // unit vector / length 1
         
         // set color per face
         float hue            = ofMap(i, 0, triangles.size(), 0, 255);

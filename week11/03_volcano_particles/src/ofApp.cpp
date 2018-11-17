@@ -94,7 +94,7 @@ void ofApp::update(){
 	firelight.setDiffuseColor( ofColor::fromHsb(hue, 255, brt));
 
     // animate sun rotation
-    sunlight.rotateDeg(.01, 0,1,0);
+    sunlight.rotateDeg(.2, 0,1,0);
 
 }
 
@@ -132,8 +132,8 @@ void ofApp::draw(){
 	ofDisableDepthTest();
 	
 	// you can draw the lights on top of your scene
-//     firelight.draw();
-//     sunlight.draw();
+     firelight.draw();
+     sunlight.draw();
 	
 	
 	cam.end();

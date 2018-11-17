@@ -89,6 +89,10 @@ void Mover::draw()
     ofColor cSlow    = ofColor::fromHex(0xC1D5FF);    // hex format: 0xRRGGBB
     ofColor cFast    = ofColor::fromHex(0xFF4831);
     
+    ofColor red = ofColor(255,0,0);
+    ofColor blue = ofColor(0,0,255);
+    red.lerp(blue, 0);
+    
     float percent    = ofMap(glm::length(vel), 0., 7., 0., 1., true);    // mix based on speed
     ofColor color   = cSlow.lerp(cFast, percent);    // "lerp" == interpolate
     

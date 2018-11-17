@@ -57,7 +57,8 @@ void Particle::draw()
     
     ofColor color = ofColor::fromHsb(hue,sat,brt);
     ofSetColor(color);
-    ofDrawCircle(pos, 5);
+    //ofDrawCircle(pos, 5);
+    ofDrawSphere(glm::vec3(pos, 0), 5);
     ofPopStyle();
 }
 

@@ -27,6 +27,9 @@ public:
     // test if a pinball is colliding
     bool testCollision(glm::vec2 ballPos, float ballRadius);
     
+    glm::vec2 getDirection();   // angle -> vector
+    glm::vec2 getNormal();
+    
     glm::vec2 pos;
     float angleRadians;
     

@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	
-	vid.load("video.mp4");
+    vid.load("/Users/tyler/Documents/of_v0.10.0_osx_release/dt_openframeworks_2018/week12/05_glitch/bin/data/video.mp4");
 	vidShift.allocate(vid.getWidth(), vid.getHeight(), OF_IMAGE_COLOR);
     
     vid.play();
