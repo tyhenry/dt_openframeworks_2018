@@ -34,7 +34,7 @@ Triangles have a front (clockwise) and back (counter-clockwise)._
 
 ![mesh example image](square_mesh_triangles.jpg)
 
-`indices` = [ 0,1,2, 1,2,3 ]
+`indices` = [ 0,1,3, 1,2,3 ]
 
 `ofMesh` can also contain more (optional) mesh data -  
 `texture coordinates`, and `normals`:  
