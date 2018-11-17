@@ -16,17 +16,17 @@
 
 A **mesh** is a collection of 3D points (_vertices_), connected by lines (a _wireframe_) to form a surface (_faces_).  
 
-In oF, we use **[`ofMesh`](https://openframeworks.cc/documentation/3d/ofMesh)** to represent a 3D mesh. 
+In oF, we use **[ofMesh](https://openframeworks.cc/documentation/3d/ofMesh)** to represent a 3D mesh. 
 
-`ofMesh` stores the mesh data in collections, like:
+**ofMesh** stores the mesh data in collections, like:
 
   - **vertices:** the 3D mesh points - `ofMesh::getVertices(); // returns vector<glm::vec3>`
   - **indices:** the connections between points - `ofMesh::getIndices();	// returns vector<int>`
 
-Typically, mesh vertices are connected as **triangles** to form complex surfaces.
+Typically, mesh **vertices** are connected as _triangles_ to form complex surfaces.
 
-Indices are listed in groups of threes to connect vertices into triangles.  
-Each index refers to a point by its index in the vertices vector, i.e. `index = i --> vertex[i]`.  
+**Indices** are listed in groups of 3 to connect vertices into triangles.  
+Each **index** refers to a point by its index in the vertices vector, i.e. `index = i --> vertex[i]`.  
 
 _note:  
 Indices should be listed in clockwise order when the triangle is seen from the front.  
@@ -34,23 +34,25 @@ Triangles have a front (clockwise) and back (counter-clockwise)._
 
 ![mesh example image](square_mesh_triangles.jpg)
 
-`indices` = [ 0,1,3, 1,2,3 ]
+**indices** = [ 0,1,3, 1,2,3 ]
 
-`ofMesh` can also contain more (optional) mesh data -  
-`texture coordinates`, and `normals`:  
 
-  - **texture coordinates:** how the mesh surface maps to a 2D image (a `texture`) -  
+**ofMesh** can also contain more (optional) mesh data -  
+**texture coordinates**, and **normals**:  
+
+  - **texture coordinates:** how the mesh surface maps to a 2D image (a **texture**) -  
 
 	`ofMesh::getTexCoords();	// returns vector<glm::vec2>`
 	
-	There is one `texture coordinate` per index (so 3 per triangle).  
-	Each represents a 2D position on the image.
+	One **texture coordinate** per index (so 3 per triangle).  
+	Each represents a corresponding 2D position on the image.
 
   - **normals:** how the mesh faces are oriented to reflect light -  
-  
+
   	`ofMesh::getNormals();	// return vector<glm::vec3>` 
 
-	`Normals` are vector lines that stick out from the mesh surface.  
+	**Normals** are vector lines that stick out from the mesh surface.  
+	There is one **normal** per index (so 3 per triangle).
 	They are used to calculate 3D lighting effects (when lighting is enabled).
 
 
