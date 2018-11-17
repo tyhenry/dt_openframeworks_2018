@@ -54,7 +54,7 @@ _note:
 Indices should be listed in clockwise order when the triangle is seen from the front.  
 Triangles have a front (clockwise) and back (counter-clockwise)._
 
-![mesh example image](square_mesh_triangles.jpg)
+![mesh example image](square_mesh_triangles.png)
 
 **indices** = [ 0,1,3, 1,2,3 ]
 
