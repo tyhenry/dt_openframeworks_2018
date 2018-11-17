@@ -14,6 +14,8 @@
 
 ### 3D Meshes / `ofMesh`
 
+![ocean mesh](https://www.keithlantz.net/wp-content/uploads/2011/10/waves_dft_lines.jpg)
+
 A **mesh** is a collection of 3D points (_vertices_), connected by lines (a _wireframe_) to form a surface (_faces_).  
 
 In oF, we use **[ofMesh](https://openframeworks.cc/documentation/3d/ofMesh)** to represent a 3D mesh. 
