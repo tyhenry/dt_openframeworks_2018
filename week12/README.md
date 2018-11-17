@@ -24,6 +24,12 @@ Here are some suggestions for sketches you could try:
 	You can use primitive 3D shapes like ofBoxPrimitive, or use ofMesh.  
 	Animate your world with motion and color (and lighting if you wish).
 
+### Reading
+
+For more info on image processing, check out [Preliminaries to Image Processing](http://openframeworks.cc/ofBook/chapters/image_processing_computer_vision.html#preliminariestoimageprocessing) section of ofBook.  
+It explains how pixels are stored in memory & shows how to access and manipulate them.
+
+
 ## Review
 
 ### 3D Meshes / `ofMesh`
