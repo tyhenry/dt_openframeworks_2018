@@ -14,8 +14,9 @@
 
 ### 3D Meshes / `ofMesh`
 
-A `mesh` is a collection of 3D points (`vertices`) connected by lines (a `wireframe`) to form a surface (`faces`).  
-In oF, we use [`ofMesh`](https://openframeworks.cc/documentation/3d/ofMesh) to represent a 3D mesh. 
+A **mesh** is a collection of 3D points (_vertices_), connected by lines (a _wireframe_) to form a surface (_faces_).  
+
+In oF, we use **[`ofMesh`](https://openframeworks.cc/documentation/3d/ofMesh)** to represent a 3D mesh. 
 
 `ofMesh` stores the mesh data in collections, like:
 
@@ -24,27 +25,34 @@ In oF, we use [`ofMesh`](https://openframeworks.cc/documentation/3d/ofMesh) to r
 
 Typically, mesh vertices are connected as **triangles** to form complex surfaces.
 
-Indices are listed in groups of threes to connect triangles.  Indices refer to the index of the vertices, i.e. `index = i -> vertex[i]`.  
-Indices should be listed in clockwise order.
+Indices are listed in groups of threes to connect vertices into triangles.  
+Each index refers to a point by its index in the vertices vector, i.e. `index = i --> vertex[i]`.  
+
+_note:  
+Indices should be listed in clockwise order when the triangle is seen from the front.  
+Triangles have a front (clockwise) and back (counter-clockwise)._
 
 ![mesh example image](square_mesh_triangles.jpg)
 
-indices = [ 0,1,2, 1,2,3, etc]
+`indices` = [ 0,1,2, 1,2,3 ]
 
-`ofMesh` can also contain other (optional) mesh data -
+`ofMesh` can also contain more (optional) mesh data -  
 `texture coordinates`, and `normals`:  
 
   - **texture coordinates:** how the mesh surface maps to a 2D image (a `texture`) -  
   		`ofMesh::getTexCoords();	// returns vector<glm::vec2>`  
+
   		There is one `texture coordinate` per index (so 3 per triangle).  Each represents a 2D position on the image.
 
   - **normals:** how the mesh faces are oriented to reflect light -  
   		`ofMesh::getNormals();	// return vector<glm::vec3>`  
+
   		`Normals` are vector lines that stick out from the mesh surface.  
   		They are used to calculate 3D lighting effects (when lighting is enabled).
 
 
-_note_: ofMesh defaults to triangles, but you can set it to use other modes:
+_note:  
+ofMesh defaults to triangles, but you can set it to use alternate modes:_
 
 ```c++
 
