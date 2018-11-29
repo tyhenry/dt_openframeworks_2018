@@ -7,15 +7,17 @@ void ofApp::setup(){
     
     //  load vertex and fragment shader:
     
+    //  - vertex shader creates the 'wave' movement
+    //  - fragment shader creates a color gradient
+    
     shader.load("shader.vert", "shader.frag");
         // (note: check your console for errors)
     
     //  generate a plane mesh:
     
     glm::vec2 size   = ofGetWindowSize() * 0.6;
-    glm::vec2 res    = size * 0.3;     // mesh resolution
     
-    plane.set( size.x, size.y, 100, 100 );
+    plane.set( size.x, size.y, 500, 500 );
     
     //  rotate the plane:
     plane.rotateDeg(60, -1,0,0);
@@ -28,7 +30,9 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     
-//    plane.rotateDeg(.07, 0,1,0);    // spin plane
+      // rotate plane
+//    plane.rotateDeg(.03, 1,0,0);
+//    plane.rotateDeg(.07, 0,-1,0);
 
 }
 
@@ -48,8 +52,8 @@ void ofApp::draw(){
     shader.setUniform1f("time", time);  // set float value
     shader.setUniform1f("depth", depth);
     
-//    plane.drawWireframe();  // render mesh structure
-    plane.draw();         // or render solid
+    plane.drawWireframe();  // render mesh structure
+//    plane.draw();         // or render solid
 
     shader.end();
     
