@@ -6,9 +6,6 @@
 
 #version 120
 
-#define SQRT_2 1.41421356237
-#define HALF_SQRT_2 0.707106781186548
-
 // variables
 
 varying vec2 texCoordVarying;   // shared texture coords
@@ -32,19 +29,8 @@ void main()
     //  wave travels along x
     
     float x = texCoordVarying.x * 15.f;  // arbitrary scale
-    float y = texCoordVarying.y * 5.f;  // arbitrary scale
     
-//    pos.z += sin( x + time ) * depth;
-//    pos.z += cos( y + time * .5f ) * depth;
-    float dist  = length(vec2(.5,.5) - texCoordVarying);
-    float distN = dist / HALF_SQRT_2;
-    float t     = time * 3.;
-    float amp   = depth * pow(1.-distN,2.) * 2.;
-    
-    float ripple = sin(t - dist * 15.) * amp;
-    float drop   = 1.;//sin(t * .01);//1. - fract(t /  * .01);
-    
-    pos.z = ripple * drop;
+    pos.z += sin( x + time ) * depth;
     
     // set vertex screen position
     gl_Position = gl_ProjectionMatrix * gl_ModelViewMatrix * pos;
