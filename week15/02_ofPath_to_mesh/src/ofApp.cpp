@@ -13,13 +13,11 @@ void ofApp::setup(){
     
     // make any ofPath shape
     
-    // example: make a daisy --
+    // example: make a daisy -- 8 petals
     path = generateDaisy( 8, ofGetHeight()*.5, 50 );
-        // 8 petals, petal length, center radius 50
-
 
     
-    // let's convert ofPath to an ofMesh:
+    // convert ofPath to an ofMesh:
     
     mesh = path.getTessellation();
         // "tessellation" calcs mesh triangles
@@ -32,6 +30,8 @@ void ofApp::setup(){
          << "- vertices:  \t" << mesh.getVertices().size() << endl
          << "- indices:   \t" << mesh.getIndices().size() << endl
         << "- texcoords: \t" << mesh.getTexCoords().size() << endl;
+    
+    
     
     // note --
     //  path.getTessellation() doesn't create texture coordinates
@@ -58,7 +58,10 @@ void ofApp::setup(){
     // store rectangle bounds
     bounds = ofRectangle( glm::vec2(left,top), glm::vec2(right,bottom));
     
-    // map texture coordinates based on bounds:
+    
+    
+    // map texture coordinates to mesh points
+    //    based on bounds:
     
     image.load("fractal.jpg");      // our texture
     float imgW  = image.getWidth();
@@ -75,8 +78,12 @@ void ofApp::setup(){
         mesh.addTexCoord( glm::vec2(x,y) );
     }
 
+    
+    
     // print info:
     cout << "added " << mesh.getTexCoords().size() << " texcoords";
+    
+    
     
     // load a shader --
     //   shader.frag will color the mesh with a gradient + image
@@ -109,7 +116,9 @@ void ofApp::draw(){
     cam.begin();
     ofEnableDepthTest();
     
+    
     glm::vec2 imageSize = glm::vec2( image.getWidth(), image.getHeight() );
+    
     
     // draw the path mesh with a custom gradient + texture:
     
@@ -123,6 +132,7 @@ void ofApp::draw(){
     
 //    ofSetColor(0, 170);
 //    mesh.drawWireframe();   // show the mesh wireframe
+    
     
     ofSetColor(255,0,255);
     ofNoFill();
